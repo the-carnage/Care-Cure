@@ -11,6 +11,7 @@ interface NavigationLink {
 const navigationLinks: NavigationLink[] = [
   { href: '#home', label: 'Home' },
   { href: '#about', label: 'About' },
+  {href: '#locations' , label:'Location'},
   { href: '#treatments', label: 'Treatments' },
   { href: '#gallery', label: 'Gallery' },
   { href: '#contact', label: 'Contact' },

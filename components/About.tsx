@@ -14,7 +14,7 @@ interface StatCard {
 const credentials: DoctorCredential[] = [
   { icon: '✅', text: 'Regd. No.: A-1998' },
   { icon: '✅', text: 'Licence No.: 4066' },
-  { icon: '✅', text: 'NEIAH — Ministry of Ayush, Govt. of India' },
+
 ]
 
 const stats: StatCard[] = [
@@ -39,10 +39,7 @@ export default function About() {
         <div className="section-heading reveal">
           <span className="eyebrow">About the Doctor</span>
           <h2 id="about-title">Meet Dr. Hafizur Rahman (BHMS)</h2>
-          <p className="lead">
-            Professional, compassionate homeopathic care focused on understanding each patient fully
-            before treatment begins.
-          </p>
+          <h3 id="about-title">NEIAH , Ministry of Ayush Govt. Of India.</h3>
         </div>
 
         <div className={styles.doctorGrid}>
@@ -64,12 +61,6 @@ export default function About() {
           </div>
 
           <div className="reveal" data-delay="1">
-            <h3>Care shaped around the person, not just the condition</h3>
-            <p className="lead" style={{ marginTop: '1rem' }}>
-              With years of experience in homeopathic medicine, Dr. Rahman focuses on individualized
-              treatment plans that restore balance and improve overall well-being naturally.
-            </p>
-
             <div className={styles.tagRow} aria-label="Doctor credentials">
               {credentials.map((credential, index) => (
                 <span key={index} className={styles.tag}>
@@ -77,6 +68,14 @@ export default function About() {
                 </span>
               ))}
             </div>
+
+            <h3>Care shaped around the person, not just the condition</h3>
+            <p className="lead" style={{ marginTop: '1rem' }}>
+              With years of experience in homeopathic medicine, Dr. Rahman focuses on individualized
+              treatment plans that restore balance and improve overall well-being naturally.
+            </p>
+
+            
 
             <p>
               Each consultation is designed to listen carefully, study the full symptom picture, and

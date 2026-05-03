@@ -25,8 +25,10 @@ export default function Hero() {
         <div className={`${styles.heroCopy} reveal`}>
           <span className={`eyebrow ${styles.heroEyebrow}`}>Care &amp; Cure Homoeopathic Clinic, Bilasipara</span>
           <h1 id="hero-title">Natural Healing. Personalized Care. Lasting Results.</h1>
-          <p>
-            Dr. Hafizur Rahman (BHMS) provides safe, effective, and holistic homeopathic treatment
+          
+           <h3>Dr. Hafizur Rahman (BHMS)</h3> 
+           <p>
+            Provides safe, effective, and holistic homeopathic treatment
             &mdash; targeting the root cause, not just symptoms.
           </p>
         </div>
@@ -40,14 +42,10 @@ export default function Hero() {
             ))}
           </ul>
           <div className={styles.miniContact}>
-            <span>📍 Bilasipara, Assam</span>
+            <span>📍Purani Bazar, Bilasipara, Assam</span>
             <a href="tel:8876341148">📞 8876341148</a>
           </div>
         </aside>
-      </div>
-
-      <div className={`${styles.floatingBadge} reveal`} data-delay="2">
-        Govt. Registered | NEIAH | Ministry of Ayush
       </div>
     </section>
   )

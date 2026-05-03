@@ -12,11 +12,8 @@ interface GalleryImage {
 }
 
 const galleryImages: GalleryImage[] = [
-  { src: 'https://i.ibb.co/nMn5x8Br/Dr-Hafizur-Rahman.jpg', alt: 'Doctor portrait of Dr. Hafizur Rahman', title: 'Doctor' },
-  { src: 'https://i.ibb.co/Rk29HHH7/Receiption1.jpg', alt: 'Reception area at Care and Cure Homoeopathic Clinic', title: 'Reception' },
-  { src: 'https://i.ibb.co/hJ60ktTK/Clinic-Lobby1.jpg', alt: 'Clinic lobby view 1', title: 'Lobby 1' },
-  { src: 'https://i.ibb.co/V0NDxVDt/Clinic-Lobby2.jpg', alt: 'Clinic lobby view 2', title: 'Lobby 2' },
-  { src: 'https://i.ibb.co/3yRzY4KF/Clinic-Lobby3.jpg', alt: 'Clinic lobby view 3', title: 'Lobby 3' },
+
+  { src: 'https://i.ibb.co/3yRzY4KF/Clinic-Lobby3.jpg', alt: 'Patient visit', title: 'Patient visit' },
   { src: 'https://i.ibb.co/MyXMV2hV/Doctor-Chamber1.jpg', alt: 'Doctor chamber at the clinic', title: 'Doctor Chamber' },
   { src: 'https://i.ibb.co/27FnPp8N/Patient-Visit1.jpg', alt: 'Patient visit at Care and Cure Homoeopathic Clinic', title: 'Patient Visit' },
   { src: 'https://i.ibb.co/HfRDCx3z/Patient-Image1.jpg', alt: 'Patient image 1', title: 'Patient Image 1' },
