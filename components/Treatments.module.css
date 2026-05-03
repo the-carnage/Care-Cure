@@ -1,0 +1,109 @@
+.treatmentGrid {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 1.5rem;
+  margin-bottom: -1.5rem; /* Cancel out padding visual space */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.treatmentGrid::-webkit-scrollbar {
+  display: none;
+}
+
+.treatmentCard {
+  flex: 0 0 85%;
+  scroll-snap-align: center;
+  position: relative;
+  overflow: hidden;
+  height: auto;
+  padding: 1.5rem 1.15rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  box-shadow: var(--shadow-soft);
+}
+
+.treatmentCard::before {
+  content: "";
+  position: absolute;
+  inset: auto auto -28px -28px;
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  background: rgba(116, 198, 157, 0.12);
+}
+
+.cardIcon {
+  display: inline-grid;
+  place-items: center;
+  width: 3rem;
+  height: 3rem;
+  margin-bottom: 1rem;
+  border-radius: 1rem;
+  background: rgba(116, 198, 157, 0.16);
+  color: var(--primary);
+  font-size: 1.4rem;
+}
+
+.treatmentCard h3 {
+  color: var(--primary);
+}
+
+.treatmentCard p {
+  margin-top: 0.45rem;
+  color: var(--muted);
+}
+
+.conditionsList {
+  list-style: none;
+  display: grid;
+  gap: 0.55rem;
+  margin: 1rem 0 0;
+  padding: 0;
+}
+
+.conditionsList li {
+  position: relative;
+  padding-left: 1rem;
+  color: var(--muted);
+}
+
+.conditionsList li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.72rem;
+  width: 0.38rem;
+  height: 0.38rem;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.sectionHeadingTight {
+  margin-top: 2.5rem;
+  margin-bottom: 1.25rem;
+}
+
+@media (min-width: 760px) {
+  .treatmentGrid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    overflow-x: visible;
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
+  
+  .treatmentCard {
+    flex: auto;
+    height: 100%;
+  }
+}
+
+@media (min-width: 980px) {
+  .treatmentGrid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}

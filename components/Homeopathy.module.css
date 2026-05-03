@@ -1,0 +1,84 @@
+.homeopathyGrid {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.85fr) minmax(0, 1fr);
+  gap: 2.2rem;
+  align-items: center;
+}
+
+.featureGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.featureCard {
+  position: relative;
+  height: 100%;
+  padding: 1.3rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  box-shadow: var(--shadow-soft);
+  overflow: hidden;
+}
+
+.featureCard::before {
+  content: '';
+  position: absolute;
+  inset: auto auto -28px -28px;
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  background: rgba(116, 198, 157, 0.12);
+}
+
+.featureCard h3 {
+  color: var(--primary);
+}
+
+.featureCard p {
+  margin-top: 0.45rem;
+  color: var(--muted);
+}
+
+.featureIcon {
+  display: inline-grid;
+  place-items: center;
+  width: 3rem;
+  height: 3rem;
+  margin-bottom: 1rem;
+  border-radius: 1rem;
+  background: rgba(116, 198, 157, 0.16);
+  color: var(--primary);
+  font-size: 1.4rem;
+}
+
+@media (max-width: 960px) {
+  .homeopathyGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  .featureGrid {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 1rem;
+    margin-bottom: -1rem;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    grid-template-columns: none;
+  }
+
+  .featureGrid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .featureCard {
+    flex: 0 0 85%;
+    scroll-snap-align: center;
+    height: auto;
+  }
+}

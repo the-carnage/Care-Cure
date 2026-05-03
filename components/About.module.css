@@ -1,0 +1,151 @@
+.doctorGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.doctorGrid > div {
+  min-width: 0;
+}
+
+.doctorPhotoWrap {
+  position: relative;
+}
+
+.photoFrame {
+  padding: 0.65rem;
+  border-radius: 2rem;
+  background: linear-gradient(180deg, rgba(116, 198, 157, 0.22), rgba(212, 160, 23, 0.12));
+  box-shadow: var(--shadow);
+}
+
+.doctorPhoto {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: 1.5rem;
+}
+
+.photoNote {
+  position: static;
+  margin-top: 0.95rem;
+  padding: 0.95rem 1rem;
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.88);
+  box-shadow: var(--shadow-soft);
+}
+
+.photoNote strong {
+  display: block;
+  color: var(--primary);
+}
+
+.tagRow {
+  display: grid;
+  gap: 0.7rem;
+  margin: 1.4rem 0;
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.7rem 1rem;
+  border-radius: 999px;
+  border: 1px solid rgba(45, 106, 79, 0.14);
+  background: rgba(116, 198, 157, 0.12);
+  color: var(--primary);
+  font-weight: 800;
+}
+
+.statsGrid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr;
+  margin-top: 1.6rem;
+}
+
+.statCard {
+  height: 100%;
+  padding: 1.15rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  box-shadow: var(--shadow-soft);
+}
+
+.statCard strong {
+  color: var(--primary);
+}
+
+.statCard p {
+  margin-top: 0.45rem;
+  color: var(--muted);
+}
+
+@media (min-width: 520px) {
+  .tagRow {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+@media (min-width: 760px) {
+  .doctorGrid {
+    gap: 2rem;
+  }
+
+  .statsGrid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    overflow-x: visible;
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
+  
+  .statCard {
+    flex: auto;
+    height: 100%;
+  }
+
+  .photoNote {
+    position: absolute;
+    left: 1.35rem;
+    right: 1.35rem;
+    bottom: 1.35rem;
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 759px) {
+  .statsGrid {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 1rem;
+    margin-bottom: -1rem;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    grid-template-columns: none;
+  }
+
+  .statsGrid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .statCard {
+    flex: 0 0 85%;
+    scroll-snap-align: center;
+    height: auto;
+  }
+}
+
+@media (min-width: 980px) {
+  .doctorGrid {
+    grid-template-columns: minmax(280px, 0.85fr) minmax(0, 1fr);
+    gap: 2.2rem;
+  }
+}

@@ -1,0 +1,122 @@
+.locationGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.locationCard {
+  height: 100%;
+  padding: 1.3rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  box-shadow: var(--shadow-soft);
+}
+
+.locationCard h3 {
+  color: var(--primary);
+}
+
+.locationCard p {
+  margin-top: 0.45rem;
+  color: var(--muted);
+}
+
+.infoLine {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  margin-top: 0.75rem;
+  color: var(--muted);
+}
+
+.infoLine a {
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.interiorStrip {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1.6rem;
+}
+
+.interiorStrip figure {
+  position: relative;
+  margin: 0;
+  overflow: hidden;
+  border-radius: 1.25rem;
+  box-shadow: var(--shadow-soft);
+}
+
+.interiorStrip img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.interiorStrip figure:hover img {
+  transform: scale(1.05);
+}
+
+.interiorStrip figcaption {
+  position: absolute;
+  inset: auto 0 0 0;
+  padding: 0.9rem 1rem;
+  color: #fff;
+  font-weight: 700;
+  background: linear-gradient(180deg, transparent, rgba(12, 21, 17, 0.74));
+}
+
+@media (max-width: 960px) {
+  .locationGrid {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 1.5rem;
+    margin-bottom: -1.5rem;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    grid-template-columns: none;
+  }
+  
+  .locationGrid::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .locationCard {
+    flex: 0 0 85%;
+    scroll-snap-align: center;
+    height: auto;
+  }
+
+  .interiorStrip {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 720px) {
+  .interiorStrip {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 1rem;
+    margin-bottom: -1rem;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    grid-template-columns: none;
+  }
+  
+  .interiorStrip::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .interiorStrip figure {
+    flex: 0 0 75%;
+    scroll-snap-align: center;
+  }
+}

@@ -1,0 +1,87 @@
+.contactForm {
+  padding: 1.2rem;
+  border-radius: 1.55rem;
+  background: #fff;
+  color: var(--text);
+  box-shadow: var(--shadow);
+}
+
+.contactForm h3 {
+  color: var(--primary);
+  margin-bottom: 1rem;
+}
+
+.formRow {
+  display: grid;
+  gap: 0.4rem;
+  margin-bottom: 1rem;
+}
+
+.formRow label {
+  font-weight: 800;
+  color: var(--primary);
+}
+
+.formRow input,
+.formRow textarea {
+  width: 100%;
+  padding: 0.92rem 1rem;
+  border-radius: 1rem;
+  border: 1px solid rgba(45, 106, 79, 0.16);
+  background: #fbfcf8;
+  color: var(--text);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.formRow textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+.formRow input:focus,
+.formRow textarea:focus {
+  border-color: rgba(45, 106, 79, 0.45);
+  box-shadow: 0 0 0 4px rgba(116, 198, 157, 0.16);
+  outline: none;
+}
+
+.formRow input[aria-invalid="true"],
+.formRow textarea[aria-invalid="true"] {
+  border-color: #dc2626;
+}
+
+.error {
+  color: #dc2626;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.formSubmit {
+  width: 100%;
+}
+
+.btnPrimary {
+  background: var(--primary);
+  color: #fff;
+  box-shadow: 0 14px 30px rgba(45, 106, 79, 0.24);
+}
+
+.formStatus {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  border-radius: 0.8rem;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.statusSuccess {
+  background: rgba(116, 198, 157, 0.15);
+  color: #1b4332;
+  border: 1px solid rgba(116, 198, 157, 0.3);
+}
+
+.statusError {
+  background: rgba(239, 68, 68, 0.1);
+  color: #b91c1c;
+  border: 1px solid rgba(239, 68, 68, 0.2);
+}
