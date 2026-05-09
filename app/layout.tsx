@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { Lato, Playfair_Display } from 'next/font/google'
+import { doctorPhoto } from '../constants/images'
 import './globals.css'
 
 const lato = Lato({
@@ -20,6 +21,7 @@ export const metadata: Metadata = {
   title: 'Care & Cure Homoeopathic Clinic | Dr. Hafizur Rahman | Bilasipara',
   description:
     'Care & Cure Homoeopathic Clinic in Bilasipara, Assam. Dr. Hafizur Rahman (BHMS) offers safe, personalized, and holistic homeopathic treatment for arthritis, skin diseases, insomnia, fatty liver, and more.',
+
   keywords: [
     'homeopathy',
     'homeopathic clinic',
@@ -32,7 +34,17 @@ export const metadata: Metadata = {
     'Assam clinic',
     'Care Cure Clinic',
   ],
+
   authors: [{ name: 'Dr. Hafizur Rahman' }],
+
+  // ✅ FIXED ICON CONFIG
+  icons: {
+    icon: [
+      { url: '/icon.svg', type: 'image/svg+xml' },
+      { url: '/favicon.ico', type: 'image/x-icon' }, // fallback
+    ],
+  },
+
   openGraph: {
     title: 'Care & Cure Homoeopathic Clinic | Bilasipara',
     description:
@@ -43,17 +55,19 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: 'https://i.ibb.co/nMn5x8Br/Dr-Hafizur-Rahman.jpg',
+        url: doctorPhoto,
         width: 400,
         height: 500,
         alt: 'Dr. Hafizur Rahman — Care & Cure Homoeopathic Clinic',
       },
     ],
   },
+
   robots: {
     index: true,
     follow: true,
   },
+
   other: {
     'theme-color': '#2d6a4f',
   },
@@ -100,7 +114,7 @@ export default function RootLayout({
                 name: 'Dr. Hafizur Rahman',
                 jobTitle: 'Homeopathic Physician (BHMS)',
               },
-              image: 'https://i.ibb.co/nMn5x8Br/Dr-Hafizur-Rahman.jpg',
+              image: doctorPhoto,
             }),
           }}
         />

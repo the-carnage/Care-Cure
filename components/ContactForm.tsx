@@ -67,16 +67,37 @@ export default function ContactForm() {
       setIsSubmitting(true)
       setStatus({ message: '', isError: false })
 
-      // Simulate API call
-      setTimeout(() => {
+      // Submit to FormSubmit.co via AJAX
+      fetch("https://formsubmit.co/ajax/hafiluvyou@gmail.com", {
+        method: "POST",
+        headers: { 
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+            name: formData.name,
+            phone: formData.phone,
+            message: formData.message,
+            _subject: "New Consultation Request - Care & Cure Clinic"
+        })
+      })
+      .then(response => response.json())
+      .then(data => {
         setIsSubmitting(false)
         setStatus({
-          message: `Thank you${formData.name ? `, ${formData.name}` : ''}. Your consultation request has been noted. Please call 8876341148 to confirm your appointment.`,
+          message: `Thank you${formData.name ? `, ${formData.name}` : ''}. Your request has been sent successfully to the clinic.`,
           isError: false,
         })
         setFormData({ name: '', phone: '', message: '' })
         setErrors({})
-      }, 1500)
+      })
+      .catch(error => {
+        setIsSubmitting(false)
+        setStatus({
+          message: 'Oops! Something went wrong. Please try calling us instead.',
+          isError: true,
+        })
+      })
     }
   }
 

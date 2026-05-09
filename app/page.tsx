@@ -14,7 +14,6 @@ import RevealOnScroll from '@/components/RevealOnScroll'
 export default function Home() {
   return (
     <>
-      <a className="skip-link" href="#main-content">Skip to content</a>
       <Header />
       <main id="main-content">
         <Hero />
@@ -22,7 +21,7 @@ export default function Home() {
         <Homeopathy />
         <Treatments />
         <Locations />
-        <Gallery />
+        <Gallery limit={6} />
         <Contact />
       </main>
       <Footer />

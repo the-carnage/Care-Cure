@@ -10,10 +10,10 @@ interface ContactCard {
 
 const contactCards: ContactCard[] = [
   {
-    icon: '📍',
-    title: 'Bilasipara, Purani Bazar',
-    description: '',
-    link: '',
+    icon: '✉️',
+    title: 'hafiluvyou@gmail.com',
+    description: 'Send us an email for any queries.',
+    link: 'mailto:hafiluvyou@gmail.com',
   },
   {
     icon: '📞',

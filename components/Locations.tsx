@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import styles from './Locations.module.css'
+import { interiorPhotos } from '../constants/images'
 
 interface LocationCard {
   title: string
@@ -29,12 +30,7 @@ const locations: LocationCard[] = [
   },
 ]
 
-const interiorPhotos: InteriorPhoto[] = [
-  { src: 'https://i.ibb.co/Rk29HHH7/Receiption1.jpg', alt: 'Reception area at Care and Cure Homoeopathic Clinic', caption: 'Reception' },
-  { src: 'https://i.ibb.co/hJ60ktTK/Clinic-Lobby1.jpg', alt: 'Clinic lobby view 1', caption: 'Lobby 1' },
-  { src: 'https://i.ibb.co/V0NDxVDt/Clinic-Lobby2.jpg', alt: 'Clinic lobby view 2', caption: 'Lobby 2' },
-  { src: 'https://i.ibb.co/MyXMV2hV/Doctor-Chamber1.jpg', alt: 'Doctor chamber at Care and Cure Homoeopathic Clinic', caption: 'Doctor Chamber' },
-]
+// The interiorPhotos are imported from constants/images
 
 export default function Locations() {
   return (

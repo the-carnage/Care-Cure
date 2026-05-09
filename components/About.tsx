@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import styles from './About.module.css'
+import { doctorPhoto } from '../constants/images'
 
 interface DoctorCredential {
   icon: string
@@ -47,7 +48,7 @@ export default function About() {
             <div className={styles.photoFrame}>
               <Image
                 className={styles.doctorPhoto}
-                src="https://i.ibb.co/nMn5x8Br/Dr-Hafizur-Rahman.jpg"
+                src={doctorPhoto}
                 alt="Portrait of Dr. Hafizur Rahman"
                 width={400}
                 height={500}

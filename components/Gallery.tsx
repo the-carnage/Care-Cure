@@ -2,8 +2,14 @@
 
 import { useState } from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 import Lightbox from './Lightbox'
 import styles from './Gallery.module.css'
+import { galleryImages } from '../constants/images'
+
+interface GalleryProps {
+  limit?: number
+}
 
 interface GalleryImage {
   src: string
@@ -11,33 +17,9 @@ interface GalleryImage {
   title: string
 }
 
-const galleryImages: GalleryImage[] = [
+// The galleryImages are imported from constants/images
 
-  { src: 'https://i.ibb.co/3yRzY4KF/Clinic-Lobby3.jpg', alt: 'Patient visit', title: 'Patient visit' },
-  { src: 'https://i.ibb.co/MyXMV2hV/Doctor-Chamber1.jpg', alt: 'Doctor chamber at the clinic', title: 'Doctor Chamber' },
-  { src: 'https://i.ibb.co/27FnPp8N/Patient-Visit1.jpg', alt: 'Patient visit at Care and Cure Homoeopathic Clinic', title: 'Patient Visit' },
-  { src: 'https://i.ibb.co/HfRDCx3z/Patient-Image1.jpg', alt: 'Patient image 1', title: 'Patient Image 1' },
-  { src: 'https://i.ibb.co/jZ4g0dWc/Patient-Image2.jpg', alt: 'Patient image 2', title: 'Patient Image 2' },
-  { src: 'https://i.ibb.co/bM3DHdCT/Patient-Image3.jpg', alt: 'Patient image 3', title: 'Patient Image 3' },
-  { src: 'https://i.ibb.co/G3dkTVJs/Patient-Image4.jpg', alt: 'Patient image 4', title: 'Patient Image 4' },
-  { src: 'https://i.ibb.co/HfhsWjGK/Patient-Image5.jpg', alt: 'Patient image 5', title: 'Patient Image 5' },
-  { src: 'https://i.ibb.co/mV1mhtf5/Patient-Image6.jpg', alt: 'Patient image 6', title: 'Patient Image 6' },
-  { src: 'https://i.ibb.co/Gfvvs1tf/Patient-Image7.jpg', alt: 'Patient image 7', title: 'Patient Image 7' },
-  { src: 'https://i.ibb.co/Crw1Gh3/Patient-Image8.jpg', alt: 'Patient image 8', title: 'Patient Image 8' },
-  { src: 'https://i.ibb.co/KjyLGRMQ/Patient-Image9.jpg', alt: 'Patient image 9', title: 'Patient Image 9' },
-  { src: 'https://i.ibb.co/wNHxqB5V/Patient-Image10.jpg', alt: 'Patient image 10', title: 'Patient Image 10' },
-  { src: 'https://i.ibb.co/N23HcWfN/Patient-Image11.jpg', alt: 'Patient image 11', title: 'Patient Image 11' },
-  { src: 'https://i.ibb.co/5WsrPrs2/Patient-Image12.jpg', alt: 'Patient image 12', title: 'Patient Image 12' },
-  { src: 'https://i.ibb.co/pjQwR3Fg/Patient-Image13.jpg', alt: 'Patient image 13', title: 'Patient Image 13' },
-  { src: 'https://i.ibb.co/G4xDHqK0/Patient-Image14.jpg', alt: 'Patient image 14', title: 'Patient Image 14' },
-  { src: 'https://i.ibb.co/Fb1PXtwH/Patient-Image15.jpg', alt: 'Patient image 15', title: 'Patient Image 15' },
-  { src: 'https://i.ibb.co/hxDG5qyG/Patient-Image16.jpg', alt: 'Patient image 16', title: 'Patient Image 16' },
-  { src: 'https://i.ibb.co/239Jz5LR/Patient-Image17.jpg', alt: 'Patient image 17', title: 'Patient Image 17' },
-  { src: 'https://i.ibb.co/gZGm3VZd/Patient-Image18.jpg', alt: 'Patient image 18', title: 'Patient Image 18' },
-  { src: 'https://i.ibb.co/B5NF062K/Patient-Image19.jpg', alt: 'Patient image 19', title: 'Patient Image 19' },
-]
-
-export default function Gallery() {
+export default function Gallery({ limit }: GalleryProps = {}) {
   const [lightboxOpen, setLightboxOpen] = useState(false)
   const [selectedImage, setSelectedImage] = useState<GalleryImage | null>(null)
 
@@ -64,7 +46,7 @@ export default function Gallery() {
         </div>
 
         <div className={styles.galleryGrid}>
-          {galleryImages.map((image, index) => (
+          {(limit ? galleryImages.slice(0, limit) : galleryImages).map((image, index) => (
             <a
               key={index}
               className={`${styles.galleryItem} reveal`}
@@ -86,6 +68,26 @@ export default function Gallery() {
             </a>
           ))}
         </div>
+
+        {limit && galleryImages.length > limit && (
+          <div style={{ textAlign: 'center', marginTop: '3rem' }}>
+            <Link 
+              href="/gallery" 
+              style={{
+                display: 'inline-block',
+                padding: '0.8rem 2rem',
+                backgroundColor: '#10291f',
+                color: '#fff',
+                borderRadius: '999px',
+                textDecoration: 'none',
+                fontWeight: 'bold',
+                boxShadow: '0 4px 10px rgba(0,0,0,0.1)'
+              }}
+            >
+              View Full Gallery
+            </Link>
+          </div>
+        )}
       </div>
 
       <Lightbox

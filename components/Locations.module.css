@@ -24,7 +24,7 @@
 
 .infoLine {
   display: flex;
-  align-items: flex-start;
+  align-items: stretch;
   gap: 0.6rem;
   margin-top: 0.75rem;
   color: var(--muted);
@@ -75,6 +75,7 @@
     display: flex;
     flex-wrap: nowrap;
     overflow-x: auto;
+    overflow-y: hidden;
     scroll-snap-type: x mandatory;
     padding-bottom: 1.5rem;
     margin-bottom: -1.5rem;
@@ -103,6 +104,7 @@
     display: flex;
     flex-wrap: nowrap;
     overflow-x: auto;
+    overflow-y: hidden;
     scroll-snap-type: x mandatory;
     padding-bottom: 1rem;
     margin-bottom: -1rem;
