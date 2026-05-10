@@ -31,7 +31,7 @@ export const galleryImages = [
     title: "Clinic Lobby",
   },
   {
-    src: "https://i.ibb.co/27FnPp8N/Patient-Visit1.jpg",
+    src: "https://i.ibb.co/Rp2cJVbz/Patient-Visit1.jpg",
     alt: "Patient visit",
     title: "Patient Visit 1",
   },
