@@ -91,7 +91,7 @@ export default function Treatments() {
           </p>
         </div>
 
-        <Accordion items={accordionItems} defaultOpenId="arthritis" />
+        <Accordion items={accordionItems} />
       </div>
     </section>
   )
